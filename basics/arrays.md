@@ -36,24 +36,18 @@ D에는 **static** 와 **dynamic** 등 두 종류의 배열이 있습니다.
 
 컴파일러는 이러한 연산들을 한번에 수행할 수 있는 특별 프로세서 명령어들을 사용하여 최적화 할 수도 있습니다.
 
-Both static and dynamic arrays provide the property `.length`,
-which is read-only for static arrays, but can be used in the case of
-dynamic arrays to change its size dynamically. The
-property `.dup` creates a copy of the array.
+정적, 동적 배열 모두 `.length`속성을 가지고 있는데 이는 정적배열에서는 읽기 전용값이지만 동적배열에서는 그 크기를 동적으로 변경하는데 사용될 수 있습니다. `.dup`속성은 배열의 복사본을 만드는데 사용됩니다.
 
-When indexing an array through the `arr[idx]` syntax, a special
-`$` symbol denotes an array's length. For example, `arr[$ - 1]` references
-the last element and is a short form for `arr[arr.length - 1]`.
+`arr [idx]`구문으로 배열을 색인(indexing) 할 때 특수`$`기호는 배열의 길이를 나타냅니다.
+예를 들어,`arr [$ - 1]`는 마지막 요소를 참조하는 `arr [arr.length - 1]`의 축약형 입니다.
 
-### Exercise
+### 연습
 
-Complete the function `encrypt` to decrypt the secret message.
-The text should be encrypted using *Caesar encryption*,
-which shifts the characters in the alphabet using a certain index.
-The to-be-encrypted text only contains characters in the range `a-z`,
-which should make things easier.
+비밀 메시지를 해독하기 위해 `encrypt` 함수를 완성해야 합니다.
+주어진 텍스트를 특정 인덱스를 사용하여 알파벳 문자를 이동하는 방법인 *Caesar encryption*를 사용하여 암호화합니다.
+암호화할 (to-be-encrypted) 텍스트가`a-z`범위의 문자 만 포함하기 때문에 어렵지 않을 것입니다.
 
-### In-depth
+### 더 깊은 내용
 
 - [Arrays in _Programming in D_](http://ddili.org/ders/d.en/arrays.html)
 - [Array specification](https://dlang.org/spec/arrays.html)
