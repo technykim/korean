@@ -9,44 +9,32 @@ D에는 **static** 와 **dynamic** 등 두 종류의 배열이 있습니다.
 
 정적 배열은 함수 내에서 정의된 경우 스택에, 그렇지 않으면 정적 메모리에 저장됩니다.
 이것은 컴파일할때 고정된 길이값을 가지고 있습니다.
-정적배열의 타입은 고정크기값을 가지고 있습니다:
+정적배열의 타입은 고정크기값을 가지고 있습니다 :
 
     int[8] arr;
 
-`arr`'s type is `int[8]`. Note that the size of the array is denoted
-next to the type, and not after the variable name like in C/C++.
+`arr`'의 타입은 `int[8]` 입니다. 배열의 길이를 C/C++과 달리 변수옆이 아닌 타입 옆에 표시한다는 것에 주의하세요.
 
-#### Dynamic arrays
+#### 동적 배열
 
-Dynamic arrays are stored on the heap and can be expanded
-or shrunk at runtime. A dynamic array is created using a `new` expression
-and its length:
+동적 배열들은 힙(heap)에 저장되어 런타임 중에 확장되거나 축소될 수 있습니다. 동적 배열은 `new`라는 표현식과 길이값으로 생성합니다 :
 
     int size = 8; // run-time variable
     int[] arr = new int[size];
 
-The type of `arr` is `int[]`, which is a **slice**. Slices
-will be explained in more detail in the [next section](basics/slices). Multi-dimensional
-arrays can be created easily using the `auto arr = new int[3][3]` syntax.
+`arr`의 타입은 `int[]` 이고 이것은 **slice** 입니다. 슬라이스는 [다음장](basics/slices)에서 더 자세히 설명됩니다. 다차원배열은 `auto arr = new int[3][3]` 구문과 같이 쉽게 만들수 있습니다.
 
-#### Array operations and properties
+#### 배열 연산과 속성
 
-Arrays can be concatenated using the `~` operator, which
-will create a new dynamic array.
+ 
+배열은 `~`연산자를 이용해 연결될 수 있습니다. 이때 새로운 동적배열이 생깁니다.
 
-Mathematical operations can
-be applied to whole arrays using a syntax like `c[] = a[] + b[]`, for example.
-This adds all elements of `a` and `b` so that
-`c[0] = a[0] + b[0]`, `c[1] = a[1] + b[1]`, etc. It is also possible
-to perform operations on a whole array with a single
-value:
+수학적 연산은 예를 들어 `c[] = a[] + b[]` 구문과 같이 모든 배열에 적용할 수 있습니다. 이것은 `a`와`b`의 모든 요소를`c [0] = a [0] + b [0]``c [1] = a [1] + b [1]`등과 같이 서로 더합니다. 또한 단일 값을 배열과 연산할 수 도 있습니다 :
 
-    a[] *= 2; // multiple all elements by 2
-    a[] %= 26; // calculate the modulo by 26 for all a's
+    a[] *= 2; // 모든 요소에 2를 곱한값
+    a[] %= 26; // 모든 요소의 26에 대한 나머지값 계산
 
-These operations might be optimized
-by the compiler to use special processor instructions that
-do the operations in one go.
+컴파일러는 이러한 연산들을 한번에 수행할 수 있는 특별 프로세서 명령어들을 사용하여 최적화 할 수도 있습니다.
 
 Both static and dynamic arrays provide the property `.length`,
 which is read-only for static arrays, but can be used in the case of
