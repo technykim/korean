@@ -1,6 +1,7 @@
-# Welcome to D
+# D언어에 오신것을 환영합니다
 
-Welcome to the interactive tour of the *D Programming language*.
+
+*D 프로그래밍 언어*의 인터랙티브 투어에 오신것을 환영합니다.
 
 {{#dmanmobile}}
 
